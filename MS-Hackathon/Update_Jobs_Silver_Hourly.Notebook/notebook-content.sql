@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS silver.linkedin_jobs (
     , EmploymentType STRING              
     , JobFunction STRING
     , Industries STRING
-    , ExtractionDatetime TIMESTAMP             
+    , ExtractionDatetime TIMESTAMP            
 )
 
 -- METADATA ********************
@@ -63,7 +63,7 @@ WITH linkedin_jobs_transformed_view AS (
     , JobFunction
     , JobDescription
     , Industries
-    , ExtractionDatetime
+    , COALESCE(TRY_CAST(publishdatetime AS TIMESTAMP), ExtractionDatetime) AS ExtractionDatetime
     
     FROM bronze.linkedin_jobs
 )

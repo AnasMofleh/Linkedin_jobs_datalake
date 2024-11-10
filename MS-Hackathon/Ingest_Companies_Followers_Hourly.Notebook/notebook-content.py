@@ -24,9 +24,8 @@
 # The process involves:
 # 
 # 1. **Getting the companys URLs** - Accessing `bronze.linkedin_jobs` to fetch company url.
-# 2. **Data extraction** - Extracting the number of followers for.
-# 3. **Data Transformation** - Structuring the data to capture hourly follower trends.
-# 4. **Data Loading** - Saving or exporting the processed data for further analysis or reporting.
+# 2. **Data extraction** - Extracting the number of followers for each company.
+# 4. **Data Loading** - Saving the data in `bronze.company_followers` for further analysis and reporting.
 
 
 # CELL ********************
@@ -64,6 +63,18 @@ headers = {
 # META   "language": "sparksql",
 # META   "language_group": "synapse_pyspark"
 # META }
+
+# MARKDOWN ********************
+
+# ### 
+
+# MARKDOWN ********************
+
+# ## Restricting to Only New Data
+# 
+# We retrieve distinct `CompanyLinkedinUrl` values from the `bronze.linkedin_jobs` table where the `ExtractionDatetime` aligns with the current hour. This ensures we're only processing fresh data.
+# 
+
 
 # CELL ********************
 
