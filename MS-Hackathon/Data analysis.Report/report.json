@@ -1,0 +1,458 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.59\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":0,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true,\"allowInlineExploration\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"creationSource\":\"QuickCreate\"}",
+  "filters": "[{\"name\":\"e6f7adee173762a83a27\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"linkedin_jobs\"}},\"Property\":\"City\"}},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{\"general\":[{\"properties\":{}}]}},{\"name\":\"5b9d54709abfcbdb0b11\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"linkedin_jobs\"}},\"Property\":\"CompanyName\"}},\"type\":\"Categorical\",\"howCreated\":1}]",
+  "layoutOptimization": 0,
+  "pods": [
+    {
+      "boundSection": "5dd1d358971397ce1d00",
+      "config": "{}",
+      "name": "5254a78c69d9acf95470"
+    }
+  ],
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Seniority level requirements ",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "17f06b2cba539001137c",
+      "ordinal": 3,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"c94e3f7094a472b01f7c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":11.399800118916595,\"y\":8.290763722848432,\"z\":0,\"width\":1268.48684959581,\"height\":711.9693346996091}}],\"singleVisual\":{\"visualType\":\"hundredPercentStackedBarChart\",\"projections\":{\"Category\":[{\"queryRef\":\"inriched_job.Requirements\",\"active\":true}],\"Series\":[{\"queryRef\":\"linkedin_jobs.SeniorityLevel\"}],\"Y\":[{\"queryRef\":\"Count(inriched_job.JobId)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"i\",\"Entity\":\"inriched_job\",\"Type\":0},{\"Name\":\"l\",\"Entity\":\"linkedin_jobs\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"Requirements\"},\"Name\":\"inriched_job.Requirements\",\"NativeReferenceName\":\"Requirements\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"SeniorityLevel\"},\"Name\":\"linkedin_jobs.SeniorityLevel\",\"NativeReferenceName\":\"SeniorityLevel\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"JobId\"}},\"Function\":2},\"Name\":\"Count(inriched_job.JobId)\",\"NativeReferenceName\":\"Count of JobId1\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"JobId\"}},\"Function\":2}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Seniority level requirements '\"}}}}}]}}}",
+          "filters": "[{\"name\":\"cb6171a0509da577aa7d\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"linkedin_jobs\"}},\"Property\":\"SeniorityLevel\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"l\",\"Entity\":\"linkedin_jobs\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Not\":{\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"SeniorityLevel\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"null\"}}],[{\"Literal\":{\"Value\":\"'Not Applicable'\"}}]]}}}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{\"general\":[{\"properties\":{\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"isHiddenInViewMode\":false}]",
+          "height": 711.97,
+          "width": 1268.49,
+          "x": 11.40,
+          "y": 8.29,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Seniority level tools",
+      "displayOption": 1,
+      "filters": "[{\"name\":\"b81569154212f9ab1932\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"linkedin_jobs\"}},\"Property\":\"SeniorityLevel\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"l\",\"Entity\":\"linkedin_jobs\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Not\":{\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"SeniorityLevel\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"null\"}}],[{\"Literal\":{\"Value\":\"'Not Applicable'\"}}]]}}}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{\"general\":[{\"properties\":{\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}]",
+      "height": 720.00,
+      "name": "5aefb8a8c3808af32f06",
+      "ordinal": 4,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"9e92d036a92939b62625\",\"layouts\":[{\"id\":0,\"position\":{\"x\":39.38112768353005,\"y\":14.508836514984756,\"z\":0,\"width\":1221.8513036547877,\"height\":705.7512619074728}}],\"singleVisual\":{\"visualType\":\"hundredPercentStackedBarChart\",\"projections\":{\"Category\":[{\"queryRef\":\"inriched_job.Tools\",\"active\":true}],\"Series\":[{\"queryRef\":\"linkedin_jobs.SeniorityLevel\"}],\"Y\":[{\"queryRef\":\"CountNonNull(linkedin_jobs.JobId)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"i\",\"Entity\":\"inriched_job\",\"Type\":0},{\"Name\":\"l\",\"Entity\":\"linkedin_jobs\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"Tools\"},\"Name\":\"inriched_job.Tools\",\"NativeReferenceName\":\"Tools\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"SeniorityLevel\"},\"Name\":\"linkedin_jobs.SeniorityLevel\",\"NativeReferenceName\":\"SeniorityLevel\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"JobId\"}},\"Function\":2},\"Name\":\"CountNonNull(linkedin_jobs.JobId)\",\"NativeReferenceName\":\"Count of JobId1\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"JobId\"}},\"Function\":2}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[{\"name\":\"499c2277e1b159cda52f\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"linkedin_jobs\"}},\"Property\":\"SeniorityLevel\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"l\",\"Entity\":\"linkedin_jobs\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Not\":{\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"SeniorityLevel\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"null\"}}],[{\"Literal\":{\"Value\":\"'Not Applicable'\"}}]]}}}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{\"general\":[{\"properties\":{\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"isHiddenInViewMode\":false}]",
+          "height": 705.75,
+          "width": 1221.85,
+          "x": 39.38,
+          "y": 14.51,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{\"filterSortOrder\":3}",
+      "displayName": "Jobs key measures",
+      "displayOption": 1,
+      "filters": "[{\"name\":\"159b34c31efb9211f054\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"inriched_job\"}},\"Property\":\"Offer\"}},\"type\":\"Categorical\",\"howCreated\":1,\"ordinal\":0},{\"name\":\"cf6d0c9c957433c74ebc\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"inriched_job\"}},\"Property\":\"Tools\"}},\"type\":\"Categorical\",\"howCreated\":1,\"ordinal\":1},{\"name\":\"246cd1c3b1981d78c0bb\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"inriched_job\"}},\"Property\":\"WorkType\"}},\"type\":\"Categorical\",\"howCreated\":1,\"ordinal\":2}]",
+      "height": 720.00,
+      "name": "5dd1d358971397ce1d00",
+      "ordinal": 2,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"09b4f4b30e0715dbc220\",\"layouts\":[{\"id\":0,\"position\":{\"x\":516.1000417473149,\"y\":82.90763722848432,\"z\":2000,\"width\":462.2100775488001,\"height\":305.72191228003595,\"tabOrder\":-3000}}],\"singleVisual\":{\"visualType\":\"shape\",\"drillFilterOtherVisuals\":true,\"objects\":{\"fill\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"outline\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"shape\":[{\"properties\":{\"tileShape\":{\"expr\":{\"Literal\":{\"Value\":\"'rectangle'\"}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"4M\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#E6E6E6'\"}}}}}}}],\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"preset\":{\"expr\":{\"Literal\":{\"Value\":\"'Custom'\"}}},\"shadowBlur\":{\"expr\":{\"Literal\":{\"Value\":\"3M\"}}},\"shadowDistance\":{\"expr\":{\"Literal\":{\"Value\":\"1M\"}}},\"shadowSpread\":{\"expr\":{\"Literal\":{\"Value\":\"1M\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"87M\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 305.72,
+          "width": 462.21,
+          "x": 516.10,
+          "y": 82.91,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"19d32e69d89d4a1d00d9\",\"layouts\":[{\"id\":0,\"position\":{\"x\":523.3544600048073,\"y\":91.19840095133276,\"z\":7000,\"width\":444.59220463774716,\"height\":287.06769390362695,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Sum(inriched_job.JobId)\"}],\"Category\":[{\"queryRef\":\"inriched_job.Requirements\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"i\",\"Entity\":\"inriched_job\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"JobId\"}},\"Function\":2},\"Name\":\"Sum(inriched_job.JobId)\",\"NativeReferenceName\":\"Count of JobId1\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"Requirements\"},\"Name\":\"inriched_job.Requirements\",\"NativeReferenceName\":\"Requirements\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"JobId\"}},\"Function\":2}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"categoryAxis\":[{\"properties\":{\"axisType\":{\"expr\":{\"Literal\":{\"Value\":\"'Categorical'\"}}}}}],\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":3,\"Percent\":0}}}}}}}]},\"vcObjects\":{\"visualHeader\":[{\"properties\":{\"showCopyVisualImageButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showFilterRestatementButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showFocusModeButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showPinButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Jobs Requirments'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 287.07,
+          "width": 444.59,
+          "x": 523.35,
+          "y": 91.20,
+          "z": 7000.00
+        },
+        {
+          "config": "{\"name\":\"255200d007b9b321d1eb\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1069.526163701563,\"y\":8.556209309612505,\"z\":8000,\"width\":198.21884900602305,\"height\":49.91122097273961,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"multiRowCard\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(inriched_job.JobId)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"i\",\"Entity\":\"inriched_job\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"JobId\"}},\"Function\":2},\"Name\":\"Sum(inriched_job.JobId)\",\"NativeReferenceName\":\"Count of JobId\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"JobId\"}},\"Function\":2}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"card\":[{\"properties\":{\"barColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":3,\"Percent\":0}}}}},\"barWeight\":{\"expr\":{\"Literal\":{\"Value\":\"4L\"}}}}}],\"dataLabels\":[{\"properties\":{\"fontFamily\":{\"expr\":{\"Literal\":{\"Value\":\"'Segoe UI'\"}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"11L\"}}}}}],\"categoryLabels\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0.4}}}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"11L\"}}}}}]},\"vcObjects\":{\"visualHeader\":[{\"properties\":{\"showCopyVisualImageButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showFilterRestatementButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showFocusModeButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showPinButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showPersonalizeVisualButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 49.91,
+          "width": 198.22,
+          "x": 1069.53,
+          "y": 8.56,
+          "z": 8000.00
+        },
+        {
+          "config": "{\"name\":\"2698267f3b075c235ddb\",\"layouts\":[{\"id\":0,\"position\":{\"x\":516.1000417473149,\"y\":402.102040558149,\"z\":4000,\"width\":462.2100775488001,\"height\":305.72191228003595,\"tabOrder\":-6000}}],\"singleVisual\":{\"visualType\":\"shape\",\"drillFilterOtherVisuals\":true,\"objects\":{\"fill\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"outline\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"shape\":[{\"properties\":{\"tileShape\":{\"expr\":{\"Literal\":{\"Value\":\"'rectangle'\"}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"4M\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#E6E6E6'\"}}}}}}}],\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"preset\":{\"expr\":{\"Literal\":{\"Value\":\"'Custom'\"}}},\"shadowBlur\":{\"expr\":{\"Literal\":{\"Value\":\"3M\"}}},\"shadowDistance\":{\"expr\":{\"Literal\":{\"Value\":\"1M\"}}},\"shadowSpread\":{\"expr\":{\"Literal\":{\"Value\":\"1M\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"87M\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 305.72,
+          "width": 462.21,
+          "x": 516.10,
+          "y": 402.10,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"3116753c0d1e4d173a30\",\"layouts\":[{\"id\":0,\"position\":{\"x\":19.690563841765027,\"y\":409.35645881564136,\"z\":6000,\"width\":470.50084127164854,\"height\":290.1767302996951,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"projections\":{\"Category\":[{\"queryRef\":\"inriched_job.Tools\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(inriched_job.JobId)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"i\",\"Entity\":\"inriched_job\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"JobId\"}},\"Function\":2},\"Name\":\"Sum(inriched_job.JobId)\",\"NativeReferenceName\":\"Count of JobId\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"Tools\"},\"Name\":\"inriched_job.Tools\",\"NativeReferenceName\":\"Tools\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"JobId\"}},\"Function\":2}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"categoryAxis\":[{\"properties\":{\"axisType\":{\"expr\":{\"Literal\":{\"Value\":\"'Categorical'\"}}}}}],\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":3,\"Percent\":0}}}}}}}]},\"vcObjects\":{\"visualHeader\":[{\"properties\":{\"showCopyVisualImageButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showFilterRestatementButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showFocusModeButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showPinButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Jobs required tools'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 290.18,
+          "width": 470.50,
+          "x": 19.69,
+          "y": 409.36,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"3f0713ead5fa314e487c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":978.310119296115,\"y\":71.50783710956773,\"z\":13000,\"width\":290.1767302996951,\"height\":636.3161157286172,\"tabOrder\":8000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"linkedin_jobs.CompanyName\"},{\"queryRef\":\"Sum(company_followers.Nbr_of_followers)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"l\",\"Entity\":\"linkedin_jobs\",\"Type\":0},{\"Name\":\"c\",\"Entity\":\"company_followers\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"CompanyName\"},\"Name\":\"linkedin_jobs.CompanyName\",\"NativeReferenceName\":\"CompanyName\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Nbr_of_followers\"},\"Name\":\"Sum(company_followers.Nbr_of_followers)\",\"NativeReferenceName\":\"Nbr_of_followers\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Nbr_of_followers\"}}}]},\"drillFilterOtherVisuals\":true,\"filterSortOrder\":1,\"objects\":{\"columnWidth\":[{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"151.06681130693028D\"}}}},\"selector\":{\"metadata\":\"linkedin_jobs.CompanyName\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"120.29724824627893D\"}}}},\"selector\":{\"metadata\":\"Sum(company_followers.Nbr_of_followers)\"}}]}}}",
+          "filters": "[]",
+          "height": 636.32,
+          "width": 290.18,
+          "x": 978.31,
+          "y": 71.51,
+          "z": 13000.00
+        },
+        {
+          "config": "{\"name\":\"4540549b705a7d621e6e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":12,\"y\":58,\"height\":26,\"width\":1256,\"tabOrder\":-1000,\"z\":0}}],\"singleVisual\":{\"visualType\":\"shape\",\"drillFilterOtherVisuals\":true,\"objects\":{\"outline\":[{\"properties\":{\"lineColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.1}}}}},\"weight\":{\"expr\":{\"Literal\":{\"Value\":\"1M\"}}}},\"selector\":{\"id\":\"default\"}}],\"rotation\":[{\"properties\":{\"shapeAngle\":{\"expr\":{\"Literal\":{\"Value\":\"0L\"}}}}}],\"shape\":[{\"properties\":{\"tileShape\":{\"expr\":{\"Literal\":{\"Value\":\"'line'\"}}}}}]},\"vcObjects\":{\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 26.00,
+          "width": 1256.00,
+          "x": 12.00,
+          "y": 58.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"891d0f33908116d08262\",\"layouts\":[{\"id\":0,\"position\":{\"x\":12,\"y\":2,\"height\":39,\"width\":306,\"tabOrder\":5000,\"z\":10000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Jobs key measures \",\"textStyle\":{\"fontSize\":\"16pt\"}}]}]}}]},\"vcObjects\":{}}}",
+          "filters": "[]",
+          "height": 39.00,
+          "width": 306.00,
+          "x": 12.00,
+          "y": 2.00,
+          "z": 10000.00
+        },
+        {
+          "config": "{\"name\":\"9914abb59012481eb6b4\",\"layouts\":[{\"id\":0,\"position\":{\"x\":19.690563841765027,\"y\":91.19840095133276,\"z\":11000,\"width\":470.50084127164854,\"height\":298.4674940225436,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"projections\":{\"Category\":[{\"queryRef\":\"inriched_job.Offer\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(inriched_job.JobId)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"i\",\"Entity\":\"inriched_job\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"Offer\"},\"Name\":\"inriched_job.Offer\",\"NativeReferenceName\":\"Offer\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"JobId\"}},\"Function\":2},\"Name\":\"Sum(inriched_job.JobId)\",\"NativeReferenceName\":\"Count of JobId\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"JobId\"}},\"Function\":2}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"categoryAxis\":[{\"properties\":{\"axisType\":{\"expr\":{\"Literal\":{\"Value\":\"'Categorical'\"}}}}}],\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":3,\"Percent\":0}}}}}}}]},\"vcObjects\":{\"visualHeader\":[{\"properties\":{\"showCopyVisualImageButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showFilterRestatementButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showFocusModeButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showPinButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Jobs offer'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 298.47,
+          "width": 470.50,
+          "x": 19.69,
+          "y": 91.20,
+          "z": 11000.00
+        },
+        {
+          "config": "{\"name\":\"9a04f435d38e60bc8665\",\"layouts\":[{\"id\":0,\"position\":{\"x\":12.436145584272648,\"y\":402.102040558149,\"z\":3000,\"width\":485.0096777866333,\"height\":305.72191228003595,\"tabOrder\":-5000}}],\"singleVisual\":{\"visualType\":\"shape\",\"drillFilterOtherVisuals\":true,\"objects\":{\"fill\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"outline\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"shape\":[{\"properties\":{\"tileShape\":{\"expr\":{\"Literal\":{\"Value\":\"'rectangle'\"}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"4M\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#E6E6E6'\"}}}}}}}],\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"preset\":{\"expr\":{\"Literal\":{\"Value\":\"'Custom'\"}}},\"shadowBlur\":{\"expr\":{\"Literal\":{\"Value\":\"3M\"}}},\"shadowDistance\":{\"expr\":{\"Literal\":{\"Value\":\"1M\"}}},\"shadowSpread\":{\"expr\":{\"Literal\":{\"Value\":\"1M\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"87M\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 305.72,
+          "width": 485.01,
+          "x": 12.44,
+          "y": 402.10,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"9f859267c789ee0602ae\",\"layouts\":[{\"id\":0,\"position\":{\"x\":523.3544600048073,\"y\":409.35645881564136,\"z\":5000,\"width\":444.59220463774716,\"height\":298.4674940225436,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"columnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"inriched_job.WorkType\",\"active\":true}],\"Y\":[{\"queryRef\":\"Count(inriched_job.JobId)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"i\",\"Entity\":\"inriched_job\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"WorkType\"},\"Name\":\"inriched_job.WorkType\",\"NativeReferenceName\":\"WorkType\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"JobId\"}},\"Function\":2},\"Name\":\"Count(inriched_job.JobId)\",\"NativeReferenceName\":\"Count of JobId1\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"JobId\"}},\"Function\":2}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"categoryAxis\":[{\"properties\":{\"axisType\":{\"expr\":{\"Literal\":{\"Value\":\"'Categorical'\"}}}}}],\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":3,\"Percent\":0}}}}}}}]},\"vcObjects\":{\"visualHeader\":[{\"properties\":{\"showCopyVisualImageButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showFilterRestatementButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showFocusModeButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showPinButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Jobs Worktype'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 298.47,
+          "width": 444.59,
+          "x": 523.35,
+          "y": 409.36,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"e30862becb80122aa4c2\",\"layouts\":[{\"id\":0,\"position\":{\"x\":12.436145584272648,\"y\":83.94398269384037,\"z\":1000,\"width\":485.0096777866333,\"height\":305.72191228003595,\"tabOrder\":-2000}}],\"singleVisual\":{\"visualType\":\"shape\",\"drillFilterOtherVisuals\":true,\"objects\":{\"fill\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"outline\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"shape\":[{\"properties\":{\"tileShape\":{\"expr\":{\"Literal\":{\"Value\":\"'rectangle'\"}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"4M\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#E6E6E6'\"}}}}}}}],\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"preset\":{\"expr\":{\"Literal\":{\"Value\":\"'Custom'\"}}},\"shadowBlur\":{\"expr\":{\"Literal\":{\"Value\":\"3M\"}}},\"shadowDistance\":{\"expr\":{\"Literal\":{\"Value\":\"1M\"}}},\"shadowSpread\":{\"expr\":{\"Literal\":{\"Value\":\"1M\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"87M\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 305.72,
+          "width": 485.01,
+          "x": 12.44,
+          "y": 83.94,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"e9656e2042aa47d68487\",\"layouts\":[{\"id\":0,\"position\":{\"x\":12,\"y\":33,\"height\":32,\"width\":306,\"tabOrder\":4000,\"z\":9000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"silver\",\"textStyle\":{\"fontSize\":\"12pt\",\"color\":\"#605e5c\"}}]}]}}]},\"vcObjects\":{}}}",
+          "filters": "[]",
+          "height": 32.00,
+          "width": 306.00,
+          "x": 12.00,
+          "y": 33.00,
+          "z": 9000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{\"filterSortOrder\":3}",
+      "displayName": "Population analysis",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "c2df09c94d34d907cddc",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"188c8890880904082d01\",\"layouts\":[{\"id\":0,\"position\":{\"x\":490.61670569867294,\"y\":401.6861826697892,\"z\":3000,\"width\":775.3942232630758,\"height\":306.76034348165496,\"tabOrder\":-7000}}],\"singleVisual\":{\"visualType\":\"shape\",\"drillFilterOtherVisuals\":true,\"objects\":{\"fill\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"outline\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"shape\":[{\"properties\":{\"tileShape\":{\"expr\":{\"Literal\":{\"Value\":\"'rectangle'\"}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"4M\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#E6E6E6'\"}}}}}}}],\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"preset\":{\"expr\":{\"Literal\":{\"Value\":\"'Custom'\"}}},\"shadowBlur\":{\"expr\":{\"Literal\":{\"Value\":\"3M\"}}},\"shadowDistance\":{\"expr\":{\"Literal\":{\"Value\":\"1M\"}}},\"shadowSpread\":{\"expr\":{\"Literal\":{\"Value\":\"1M\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"87M\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 306.76,
+          "width": 775.39,
+          "x": 490.62,
+          "y": 401.69,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"36ee5b93e060900495da\",\"layouts\":[{\"id\":0,\"position\":{\"x\":11.990632318501172,\"y\":83.9344262295082,\"z\":2000,\"width\":465.6362217017955,\"height\":624.512099921936,\"tabOrder\":-5000}}],\"singleVisual\":{\"visualType\":\"shape\",\"drillFilterOtherVisuals\":true,\"objects\":{\"fill\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"outline\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"shape\":[{\"properties\":{\"tileShape\":{\"expr\":{\"Literal\":{\"Value\":\"'rectangle'\"}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"4M\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#E6E6E6'\"}}}}}}}],\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"preset\":{\"expr\":{\"Literal\":{\"Value\":\"'Custom'\"}}},\"shadowBlur\":{\"expr\":{\"Literal\":{\"Value\":\"3M\"}}},\"shadowDistance\":{\"expr\":{\"Literal\":{\"Value\":\"1M\"}}},\"shadowSpread\":{\"expr\":{\"Literal\":{\"Value\":\"1M\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"87M\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 624.51,
+          "width": 465.64,
+          "x": 11.99,
+          "y": 83.93,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"3f72d810a127e0dd9eba\",\"layouts\":[{\"id\":0,\"position\":{\"x\":12,\"y\":58,\"height\":26,\"width\":1256,\"tabOrder\":-1000,\"z\":0}}],\"singleVisual\":{\"visualType\":\"shape\",\"drillFilterOtherVisuals\":true,\"objects\":{\"outline\":[{\"properties\":{\"lineColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.1}}}}},\"weight\":{\"expr\":{\"Literal\":{\"Value\":\"1M\"}}}},\"selector\":{\"id\":\"default\"}}],\"rotation\":[{\"properties\":{\"shapeAngle\":{\"expr\":{\"Literal\":{\"Value\":\"0L\"}}}}}],\"shape\":[{\"properties\":{\"tileShape\":{\"expr\":{\"Literal\":{\"Value\":\"'line'\"}}}}}]},\"vcObjects\":{\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 26.00,
+          "width": 1256.00,
+          "x": 12.00,
+          "y": 58.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"4f068ca66e030c06c076\",\"layouts\":[{\"id\":0,\"position\":{\"x\":497.61124121779864,\"y\":409.67993754879,\"z\":9000,\"width\":760.4059328649492,\"height\":289.77361436377834,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"projections\":{\"Y\":[{\"queryRef\":\"CountNonNull(sweden_population.MenPopulation)\"},{\"queryRef\":\"CountNonNull(sweden_population.WomenPopulation)\"}],\"Category\":[{\"queryRef\":\"sweden_population.City\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s1\",\"Entity\":\"sweden_population\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s1\"}},\"Property\":\"MenPopulation\"}},\"Function\":0},\"Name\":\"CountNonNull(sweden_population.MenPopulation)\",\"NativeReferenceName\":\"Sum of MenPopulation\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s1\"}},\"Property\":\"WomenPopulation\"}},\"Function\":0},\"Name\":\"CountNonNull(sweden_population.WomenPopulation)\",\"NativeReferenceName\":\"Sum of WomenPopulation\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s1\"}},\"Property\":\"City\"},\"Name\":\"sweden_population.City\",\"NativeReferenceName\":\"City\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s1\"}},\"Property\":\"MenPopulation\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fillRule\":{\"linearGradient2\":{\"min\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'minColor'\"}}}},\"max\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'maxColor'\"}}}},\"nullColoringStrategy\":{\"strategy\":{\"expr\":{\"Literal\":{\"Value\":\"'asZero'\"}}}}}},\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":9,\"Percent\":0}}}}}}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":6,\"Percent\":0.4}}}}}},\"selector\":{\"metadata\":\"CountNonNull(sweden_population.WomenPopulation)\"}}],\"valueAxis\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1000D\"}}},\"enableDetailDataLabel\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"enableValueDataLabel\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"enableTitleDataLabel\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}},{\"properties\":{},\"selector\":{\"data\":[{\"dataViewWildcard\":{\"matchingOption\":1}}],\"highlightMatching\":1}},{\"properties\":{\"labelPosition\":{\"expr\":{\"Literal\":{\"Value\":\"'InsideEnd'\"}}},\"labelOverflow\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"optimizeLabelDisplay\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}},\"selector\":{\"metadata\":\"CountNonNull(sweden_population.WomenPopulation)\"}},{\"properties\":{\"labelPosition\":{\"expr\":{\"Literal\":{\"Value\":\"'OutsideEnd'\"}}},\"labelOverflow\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}},\"selector\":{\"metadata\":\"CountNonNull(sweden_population.MenPopulation)\"}}],\"legend\":[{\"properties\":{\"position\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}}",
+          "filters": "[{\"name\":\"5875800480c764a0113c\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"sweden_population\"}},\"Property\":\"TotalPopulation\"}},\"type\":\"Advanced\",\"howCreated\":1}]",
+          "height": 289.77,
+          "width": 760.41,
+          "x": 497.61,
+          "y": 409.68,
+          "z": 9000.00
+        },
+        {
+          "config": "{\"name\":\"997d81d1d05bc91b6564\",\"layouts\":[{\"id\":0,\"position\":{\"x\":22.982045277127245,\"y\":92.92740046838408,\"z\":7000,\"width\":447.65027322404376,\"height\":606.5261514441843,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"map\",\"projections\":{\"Category\":[{\"queryRef\":\"sweden_population.City\",\"active\":true}],\"Size\":[{\"queryRef\":\"CountNonNull(sweden_population.TotalPopulation)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s1\",\"Entity\":\"sweden_population\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s1\"}},\"Property\":\"City\"},\"Name\":\"sweden_population.City\",\"NativeReferenceName\":\"City1\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s1\"}},\"Property\":\"TotalPopulation\"}},\"Function\":0},\"Name\":\"CountNonNull(sweden_population.TotalPopulation)\",\"NativeReferenceName\":\"Sum of TotalPopulation\"}]},\"drillFilterOtherVisuals\":true,\"filterSortOrder\":3,\"hasDefaultSort\":true,\"objects\":{\"mapControls\":[{\"properties\":{\"autoZoom\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"showZoomButtons\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"showLassoButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"dataPoint\":[{\"properties\":{\"fillRule\":{\"linearGradient2\":{\"min\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'minColor'\"}}}},\"max\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'maxColor'\"}}}},\"nullColoringStrategy\":{\"strategy\":{\"expr\":{\"Literal\":{\"Value\":\"'asZero'\"}}}}}},\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#2CC252'\"}}}}}}}],\"mapStyles\":[{\"properties\":{\"mapTheme\":{\"expr\":{\"Literal\":{\"Value\":\"'road'\"}}},\"showLabels\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"heatMap\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"filterRadius\":{\"expr\":{\"Literal\":{\"Value\":\"25D\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"7D\"}}},\"unit\":{\"expr\":{\"Literal\":{\"Value\":\"'pixels'\"}}}}}],\"bubbles\":[{\"properties\":{\"bubbleSize\":{\"expr\":{\"Literal\":{\"Value\":\"1L\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'TotalPopulation by City'\"}}}}}]}}}",
+          "filters": "[{\"name\":\"e122b6a6099123e1a315\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"sweden_population\"}},\"Property\":\"City\"}},\"type\":\"Categorical\",\"howCreated\":0,\"isHiddenInViewMode\":false,\"ordinal\":0},{\"name\":\"4e0c0a6e129020c13cc0\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"sweden_population\"}},\"Property\":\"TotalPopulation\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"sweden_population\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Comparison\":{\"ComparisonKind\":1,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"TotalPopulation\"}},\"Right\":{\"Literal\":{\"Value\":\"55000L\"}}}}}]},\"type\":\"Advanced\",\"howCreated\":1,\"ordinal\":1}]",
+          "height": 606.53,
+          "width": 447.65,
+          "x": 22.98,
+          "y": 92.93,
+          "z": 7000.00
+        },
+        {
+          "config": "{\"name\":\"a8ba1e823068baa41e00\",\"layouts\":[{\"id\":0,\"position\":{\"x\":12,\"y\":33,\"height\":32,\"width\":306,\"tabOrder\":1000,\"z\":5000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"\"}]}]}}]},\"vcObjects\":{}}}",
+          "filters": "[]",
+          "height": 32.00,
+          "width": 306.00,
+          "x": 12.00,
+          "y": 33.00,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"cc3825012dacaa0e1723\",\"layouts\":[{\"id\":0,\"position\":{\"x\":12,\"y\":2,\"height\":39,\"width\":306,\"tabOrder\":2000,\"z\":6000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Sweden population insights\",\"textStyle\":{\"fontSize\":\"16pt\"}}]}]}}]},\"vcObjects\":{}}}",
+          "filters": "[]",
+          "height": 39.00,
+          "width": 306.00,
+          "x": 12.00,
+          "y": 2.00,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"d6b5b2cfb67b50ea28cb\",\"layouts\":[{\"id\":0,\"position\":{\"x\":497.61124121779864,\"y\":92.92740046838408,\"z\":8000,\"width\":760.4059328649492,\"height\":288.77439500390324,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"projections\":{\"Y\":[{\"queryRef\":\"CountNonNull(sweden_population.TotalPopulation)\"}],\"Category\":[{\"queryRef\":\"sweden_population.City\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"sweden_population\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"TotalPopulation\"}},\"Function\":0},\"Name\":\"CountNonNull(sweden_population.TotalPopulation)\",\"NativeReferenceName\":\"Sum of TotalPopulation\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"City\"},\"Name\":\"sweden_population.City\",\"NativeReferenceName\":\"City\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"TotalPopulation\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"filterSortOrder\":3,\"hasDefaultSort\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fillRule\":{\"linearGradient2\":{\"min\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'minColor'\"}}}},\"max\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'maxColor'\"}}}},\"nullColoringStrategy\":{\"strategy\":{\"expr\":{\"Literal\":{\"Value\":\"'asZero'\"}}}}}},\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#2CC252'\"}}}}}}}],\"valueAxis\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1000D\"}}},\"enableDetailDataLabel\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}},{\"properties\":{},\"selector\":{\"data\":[{\"dataViewWildcard\":{\"matchingOption\":1}}],\"highlightMatching\":1}}]}}}",
+          "filters": "[{\"name\":\"034b41a451019d1b3e12\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"linkedin_jobs\"}},\"Property\":\"City\"}},\"type\":\"Categorical\",\"howCreated\":1,\"isHiddenInViewMode\":false,\"ordinal\":0},{\"name\":\"3ca4ad846694204b5b0e\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"sweden_population\"}},\"Property\":\"TotalPopulation\"}},\"type\":\"Advanced\",\"howCreated\":1,\"ordinal\":1}]",
+          "height": 288.77,
+          "width": 760.41,
+          "x": 497.61,
+          "y": 92.93,
+          "z": 8000.00
+        },
+        {
+          "config": "{\"name\":\"e921dfce0472d0c92211\",\"layouts\":[{\"id\":0,\"position\":{\"x\":490.61670569867294,\"y\":83.9344262295082,\"z\":1000,\"width\":775.3942232630758,\"height\":305.76112412177986,\"tabOrder\":-3000}}],\"singleVisual\":{\"visualType\":\"shape\",\"drillFilterOtherVisuals\":true,\"objects\":{\"fill\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"outline\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"shape\":[{\"properties\":{\"tileShape\":{\"expr\":{\"Literal\":{\"Value\":\"'rectangle'\"}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"4M\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#E6E6E6'\"}}}}}}}],\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"preset\":{\"expr\":{\"Literal\":{\"Value\":\"'Custom'\"}}},\"shadowBlur\":{\"expr\":{\"Literal\":{\"Value\":\"3M\"}}},\"shadowDistance\":{\"expr\":{\"Literal\":{\"Value\":\"1M\"}}},\"shadowSpread\":{\"expr\":{\"Literal\":{\"Value\":\"1M\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"87M\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 305.76,
+          "width": 775.39,
+          "x": 490.62,
+          "y": 83.93,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"fa830d02d3e0b7129679\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1038.7688703418992,\"y\":11.995021597481514,\"z\":4000,\"width\":229.1049125118969,\"height\":50.37909070942236,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"multiRowCard\",\"projections\":{\"Values\":[{\"queryRef\":\"sweden_population.TotalPopulation\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"sweden_population\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"TotalPopulation\"}},\"Function\":0},\"Name\":\"sweden_population.TotalPopulation\",\"NativeReferenceName\":\"Sum of TotalPopulation\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"TotalPopulation\"}},\"Function\":0}}}]},\"columnProperties\":{\"sweden_population.TotalPopulation\":{\"formatString\":\"0\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"card\":[{\"properties\":{\"barColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#71BF59'\"}}}}},\"barWeight\":{\"expr\":{\"Literal\":{\"Value\":\"4L\"}}},\"cardBackground\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#FFFFFF'\"}}}}}}}],\"dataLabels\":[{\"properties\":{\"fontFamily\":{\"expr\":{\"Literal\":{\"Value\":\"'Segoe UI'\"}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"11L\"}}}}}],\"categoryLabels\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0.4}}}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"11L\"}}}}}]},\"vcObjects\":{\"visualHeader\":[{\"properties\":{\"showCopyVisualImageButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showFilterRestatementButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showFocusModeButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showPinButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showPersonalizeVisualButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Total population'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 50.38,
+          "width": 229.10,
+          "x": 1038.77,
+          "y": 12.00,
+          "z": 4000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{\"filterSortOrder\":3}",
+      "displayName": "Linkedin jobs analysis",
+      "displayOption": 1,
+      "filters": "[{\"name\":\"152202237d3bd1871a17\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"linkedin_jobs\"}},\"Property\":\"City\"}},\"type\":\"Categorical\",\"howCreated\":1,\"ordinal\":0},{\"name\":\"d9ba823c97b2dc2ce346\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"linkedin_jobs\"}},\"Property\":\"SeniorityLevel\"}},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{\"general\":[{\"properties\":{\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"ordinal\":1},{\"name\":\"986b4bca3b017002832a\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"linkedin_jobs\"}},\"Property\":\"EmploymentType\"}},\"type\":\"Categorical\",\"howCreated\":1,\"ordinal\":2}]",
+      "height": 720.00,
+      "name": "e5228700e129d09a4028",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"093d9865d0848024a434\",\"layouts\":[{\"id\":0,\"position\":{\"x\":12,\"y\":33,\"height\":32,\"width\":306,\"tabOrder\":6000,\"z\":13000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"silver\",\"textStyle\":{\"fontSize\":\"12pt\",\"color\":\"#605e5c\"}}]}]}}]},\"vcObjects\":{}}}",
+          "filters": "[]",
+          "height": 32.00,
+          "width": 306.00,
+          "x": 12.00,
+          "y": 33.00,
+          "z": 13000.00
+        },
+        {
+          "config": "{\"name\":\"1f1c18bf24a0ecc44a63\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1069.526163701563,\"y\":8.556209309612505,\"z\":12000,\"width\":198.21884900602305,\"height\":49.91122097273961,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"multiRowCard\",\"projections\":{\"Values\":[{\"queryRef\":\"CountNonNull(linkedin_jobs.JobId)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"l1\",\"Entity\":\"linkedin_jobs\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l1\"}},\"Property\":\"JobId\"}},\"Function\":5},\"Name\":\"CountNonNull(linkedin_jobs.JobId)\",\"NativeReferenceName\":\"Count of JobId\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l1\"}},\"Property\":\"JobId\"}},\"Function\":5}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"card\":[{\"properties\":{\"barColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":3,\"Percent\":0}}}}},\"barWeight\":{\"expr\":{\"Literal\":{\"Value\":\"4L\"}}}}}],\"dataLabels\":[{\"properties\":{\"fontFamily\":{\"expr\":{\"Literal\":{\"Value\":\"'Segoe UI'\"}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"11L\"}}}}}],\"categoryLabels\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0.4}}}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"11L\"}}}}}]},\"vcObjects\":{\"visualHeader\":[{\"properties\":{\"showCopyVisualImageButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showFilterRestatementButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showFocusModeButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showPinButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showPersonalizeVisualButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 49.91,
+          "width": 198.22,
+          "x": 1069.53,
+          "y": 8.56,
+          "z": 12000.00
+        },
+        {
+          "config": "{\"name\":\"33e7a38f60b25a20e2d3\",\"layouts\":[{\"id\":0,\"position\":{\"width\":394,\"height\":282,\"x\":864,\"y\":96,\"tabOrder\":3000,\"z\":10000}}],\"singleVisual\":{\"visualType\":\"map\",\"projections\":{\"Category\":[{\"queryRef\":\"linkedin_jobs.City\",\"active\":true}],\"Size\":[{\"queryRef\":\"CountNonNull(linkedin_jobs.JobId)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"l1\",\"Entity\":\"linkedin_jobs\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l1\"}},\"Property\":\"City\"},\"Name\":\"linkedin_jobs.City\",\"NativeReferenceName\":\"City1\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l1\"}},\"Property\":\"JobId\"}},\"Function\":5},\"Name\":\"CountNonNull(linkedin_jobs.JobId)\",\"NativeReferenceName\":\"Count of JobId\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":3,\"Percent\":0}}}}},\"fillRule\":{\"linearGradient2\":{\"min\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'minColor'\"}}}},\"max\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'maxColor'\"}}}},\"nullColoringStrategy\":{\"strategy\":{\"expr\":{\"Literal\":{\"Value\":\"'asZero'\"}}}}}}}}]},\"vcObjects\":{\"visualHeader\":[{\"properties\":{\"showCopyVisualImageButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showFilterRestatementButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showFocusModeButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showPinButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'linkedin jobs by job Description'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 282.00,
+          "width": 394.00,
+          "x": 864.00,
+          "y": 96.00,
+          "z": 10000.00
+        },
+        {
+          "config": "{\"name\":\"55714926549975ab1190\",\"layouts\":[{\"id\":0,\"position\":{\"width\":410,\"height\":306,\"x\":434,\"y\":402,\"tabOrder\":-6000,\"z\":5000}}],\"singleVisual\":{\"visualType\":\"shape\",\"drillFilterOtherVisuals\":true,\"objects\":{\"fill\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"outline\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"shape\":[{\"properties\":{\"tileShape\":{\"expr\":{\"Literal\":{\"Value\":\"'rectangle'\"}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"4M\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#E6E6E6'\"}}}}}}}],\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"preset\":{\"expr\":{\"Literal\":{\"Value\":\"'Custom'\"}}},\"shadowBlur\":{\"expr\":{\"Literal\":{\"Value\":\"3M\"}}},\"shadowDistance\":{\"expr\":{\"Literal\":{\"Value\":\"1M\"}}},\"shadowSpread\":{\"expr\":{\"Literal\":{\"Value\":\"1M\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"87M\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 306.00,
+          "width": 410.00,
+          "x": 434.00,
+          "y": 402.00,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"7ad7b47038de30e06945\",\"layouts\":[{\"id\":0,\"position\":{\"width\":394,\"height\":282,\"x\":864,\"y\":414,\"tabOrder\":0,\"z\":7000}}],\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"projections\":{\"Y\":[{\"queryRef\":\"CountNonNull(linkedin_jobs.JobId)\"}],\"Category\":[{\"queryRef\":\"linkedin_jobs.CompanyName\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"l1\",\"Entity\":\"linkedin_jobs\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l1\"}},\"Property\":\"CompanyName\"},\"Name\":\"linkedin_jobs.CompanyName\",\"NativeReferenceName\":\"CompanyName1\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l1\"}},\"Property\":\"JobId\"}},\"Function\":5},\"Name\":\"CountNonNull(linkedin_jobs.JobId)\",\"NativeReferenceName\":\"Count of JobId\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l1\"}},\"Property\":\"JobId\"}},\"Function\":5}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"categoryAxis\":[{\"properties\":{\"axisType\":{\"expr\":{\"Literal\":{\"Value\":\"'Categorical'\"}}}}}],\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":3,\"Percent\":0}}}}}}}]},\"vcObjects\":{\"visualHeader\":[{\"properties\":{\"showCopyVisualImageButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showFilterRestatementButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showFocusModeButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showPinButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'linkedin jobs by Company Name'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 282.00,
+          "width": 394.00,
+          "x": 864.00,
+          "y": 414.00,
+          "z": 7000.00
+        },
+        {
+          "config": "{\"name\":\"7b60f7541e08bc6c32cb\",\"layouts\":[{\"id\":0,\"position\":{\"width\":410,\"height\":306,\"x\":434,\"y\":84,\"tabOrder\":-3000,\"z\":2000}}],\"singleVisual\":{\"visualType\":\"shape\",\"drillFilterOtherVisuals\":true,\"objects\":{\"fill\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"outline\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"shape\":[{\"properties\":{\"tileShape\":{\"expr\":{\"Literal\":{\"Value\":\"'rectangle'\"}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"4M\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#E6E6E6'\"}}}}}}}],\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"preset\":{\"expr\":{\"Literal\":{\"Value\":\"'Custom'\"}}},\"shadowBlur\":{\"expr\":{\"Literal\":{\"Value\":\"3M\"}}},\"shadowDistance\":{\"expr\":{\"Literal\":{\"Value\":\"1M\"}}},\"shadowSpread\":{\"expr\":{\"Literal\":{\"Value\":\"1M\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"87M\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 306.00,
+          "width": 410.00,
+          "x": 434.00,
+          "y": 84.00,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"8b3f7ad04d4241e7a798\",\"layouts\":[{\"id\":0,\"position\":{\"x\":12,\"y\":58,\"height\":26,\"width\":1256,\"tabOrder\":-1000,\"z\":0}}],\"singleVisual\":{\"visualType\":\"shape\",\"drillFilterOtherVisuals\":true,\"objects\":{\"outline\":[{\"properties\":{\"lineColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.1}}}}},\"weight\":{\"expr\":{\"Literal\":{\"Value\":\"1M\"}}}},\"selector\":{\"id\":\"default\"}}],\"rotation\":[{\"properties\":{\"shapeAngle\":{\"expr\":{\"Literal\":{\"Value\":\"0L\"}}}}}],\"shape\":[{\"properties\":{\"tileShape\":{\"expr\":{\"Literal\":{\"Value\":\"'line'\"}}}}}]},\"vcObjects\":{\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 26.00,
+          "width": 1256.00,
+          "x": 12.00,
+          "y": 58.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"96b8af9a30d94a60928b\",\"layouts\":[{\"id\":0,\"position\":{\"width\":394,\"height\":282,\"x\":442,\"y\":96,\"tabOrder\":4000,\"z\":11000}}],\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"projections\":{\"Category\":[{\"queryRef\":\"linkedin_jobs.TimePosting\",\"active\":true}],\"Y\":[{\"queryRef\":\"CountNonNull(linkedin_jobs.JobId)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"l1\",\"Entity\":\"linkedin_jobs\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l1\"}},\"Property\":\"JobId\"}},\"Function\":5},\"Name\":\"CountNonNull(linkedin_jobs.JobId)\",\"NativeReferenceName\":\"Count of JobId\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l1\"}},\"Property\":\"TimePosting\"},\"Name\":\"linkedin_jobs.TimePosting\",\"NativeReferenceName\":\"TimePosting1\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l1\"}},\"Property\":\"JobId\"}},\"Function\":5}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"categoryAxis\":[{\"properties\":{\"axisType\":{\"expr\":{\"Literal\":{\"Value\":\"'Categorical'\"}}}}}],\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":3,\"Percent\":0}}}}}}}]},\"vcObjects\":{\"visualHeader\":[{\"properties\":{\"showCopyVisualImageButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showFilterRestatementButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showFocusModeButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showPinButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'linkedin jobs by Time Posting'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 282.00,
+          "width": 394.00,
+          "x": 442.00,
+          "y": 96.00,
+          "z": 11000.00
+        },
+        {
+          "config": "{\"name\":\"a3e6b558507760307803\",\"layouts\":[{\"id\":0,\"position\":{\"x\":441.25,\"y\":413.75,\"z\":8000,\"width\":393.75,\"height\":282.5,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"projections\":{\"Category\":[{\"queryRef\":\"linkedin_jobs.JobFunction\",\"active\":true}],\"Y\":[{\"queryRef\":\"CountNonNull(linkedin_jobs.JobId)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"l1\",\"Entity\":\"linkedin_jobs\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l1\"}},\"Property\":\"JobId\"}},\"Function\":5},\"Name\":\"CountNonNull(linkedin_jobs.JobId)\",\"NativeReferenceName\":\"Count of JobId\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l1\"}},\"Property\":\"JobFunction\"},\"Name\":\"linkedin_jobs.JobFunction\",\"NativeReferenceName\":\"JobFunction\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l1\"}},\"Property\":\"JobId\"}},\"Function\":5}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"categoryAxis\":[{\"properties\":{\"axisType\":{\"expr\":{\"Literal\":{\"Value\":\"'Categorical'\"}}}}}],\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":3,\"Percent\":0}}}}}}}]},\"vcObjects\":{\"visualHeader\":[{\"properties\":{\"showCopyVisualImageButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showFilterRestatementButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showFocusModeButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showPinButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'linkedin jobs by Employment Type'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 282.50,
+          "width": 393.75,
+          "x": 441.25,
+          "y": 413.75,
+          "z": 8000.00
+        },
+        {
+          "config": "{\"name\":\"be5b3961a8da0b43e868\",\"layouts\":[{\"id\":0,\"position\":{\"width\":410,\"height\":306,\"x\":856,\"y\":402,\"tabOrder\":-7000,\"z\":6000}}],\"singleVisual\":{\"visualType\":\"shape\",\"drillFilterOtherVisuals\":true,\"objects\":{\"fill\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"outline\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"shape\":[{\"properties\":{\"tileShape\":{\"expr\":{\"Literal\":{\"Value\":\"'rectangle'\"}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"4M\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#E6E6E6'\"}}}}}}}],\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"preset\":{\"expr\":{\"Literal\":{\"Value\":\"'Custom'\"}}},\"shadowBlur\":{\"expr\":{\"Literal\":{\"Value\":\"3M\"}}},\"shadowDistance\":{\"expr\":{\"Literal\":{\"Value\":\"1M\"}}},\"shadowSpread\":{\"expr\":{\"Literal\":{\"Value\":\"1M\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"87M\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 306.00,
+          "width": 410.00,
+          "x": 856.00,
+          "y": 402.00,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"ccd3c14487a4ba0a59a8\",\"layouts\":[{\"id\":0,\"position\":{\"width\":410,\"height\":306,\"x\":12,\"y\":84,\"tabOrder\":-2000,\"z\":1000}}],\"singleVisual\":{\"visualType\":\"shape\",\"drillFilterOtherVisuals\":true,\"objects\":{\"fill\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"outline\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"shape\":[{\"properties\":{\"tileShape\":{\"expr\":{\"Literal\":{\"Value\":\"'rectangle'\"}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"4M\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#E6E6E6'\"}}}}}}}],\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"preset\":{\"expr\":{\"Literal\":{\"Value\":\"'Custom'\"}}},\"shadowBlur\":{\"expr\":{\"Literal\":{\"Value\":\"3M\"}}},\"shadowDistance\":{\"expr\":{\"Literal\":{\"Value\":\"1M\"}}},\"shadowSpread\":{\"expr\":{\"Literal\":{\"Value\":\"1M\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"87M\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 306.00,
+          "width": 410.00,
+          "x": 12.00,
+          "y": 84.00,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"cf24b07b9c32ae51d21e\",\"layouts\":[{\"id\":0,\"position\":{\"width\":410,\"height\":306,\"x\":856,\"y\":84,\"tabOrder\":-4000,\"z\":3000}}],\"singleVisual\":{\"visualType\":\"shape\",\"drillFilterOtherVisuals\":true,\"objects\":{\"fill\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"outline\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"shape\":[{\"properties\":{\"tileShape\":{\"expr\":{\"Literal\":{\"Value\":\"'rectangle'\"}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"4M\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#E6E6E6'\"}}}}}}}],\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"preset\":{\"expr\":{\"Literal\":{\"Value\":\"'Custom'\"}}},\"shadowBlur\":{\"expr\":{\"Literal\":{\"Value\":\"3M\"}}},\"shadowDistance\":{\"expr\":{\"Literal\":{\"Value\":\"1M\"}}},\"shadowSpread\":{\"expr\":{\"Literal\":{\"Value\":\"1M\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"87M\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 306.00,
+          "width": 410.00,
+          "x": 856.00,
+          "y": 84.00,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"e599b2b82224d2a7e109\",\"layouts\":[{\"id\":0,\"position\":{\"width\":410,\"height\":306,\"x\":12,\"y\":402,\"tabOrder\":-5000,\"z\":4000}}],\"singleVisual\":{\"visualType\":\"shape\",\"drillFilterOtherVisuals\":true,\"objects\":{\"fill\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"outline\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"shape\":[{\"properties\":{\"tileShape\":{\"expr\":{\"Literal\":{\"Value\":\"'rectangle'\"}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"4M\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#E6E6E6'\"}}}}}}}],\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"preset\":{\"expr\":{\"Literal\":{\"Value\":\"'Custom'\"}}},\"shadowBlur\":{\"expr\":{\"Literal\":{\"Value\":\"3M\"}}},\"shadowDistance\":{\"expr\":{\"Literal\":{\"Value\":\"1M\"}}},\"shadowSpread\":{\"expr\":{\"Literal\":{\"Value\":\"1M\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"87M\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 306.00,
+          "width": 410.00,
+          "x": 12.00,
+          "y": 402.00,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"f43c04dfa6b139d5d0ca\",\"layouts\":[{\"id\":0,\"position\":{\"x\":12,\"y\":2,\"height\":39,\"width\":306,\"tabOrder\":7000,\"z\":14000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Jobs key measures \",\"textStyle\":{\"fontSize\":\"16pt\"}}]}]}}]},\"vcObjects\":{}}}",
+          "filters": "[]",
+          "height": 39.00,
+          "width": 306.00,
+          "x": 12.00,
+          "y": 2.00,
+          "z": 14000.00
+        },
+        {
+          "config": "{\"name\":\"f82038f37d58c418bdb9\",\"layouts\":[{\"id\":0,\"position\":{\"width\":394,\"height\":282,\"x\":20,\"y\":414,\"tabOrder\":2000,\"z\":9000}}],\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"projections\":{\"Category\":[{\"queryRef\":\"linkedin_jobs.JobTitle\",\"active\":true}],\"Y\":[{\"queryRef\":\"CountNonNull(linkedin_jobs.JobId)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"l1\",\"Entity\":\"linkedin_jobs\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l1\"}},\"Property\":\"JobTitle\"},\"Name\":\"linkedin_jobs.JobTitle\",\"NativeReferenceName\":\"JobTitle\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l1\"}},\"Property\":\"JobId\"}},\"Function\":5},\"Name\":\"CountNonNull(linkedin_jobs.JobId)\",\"NativeReferenceName\":\"Count of JobId\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l1\"}},\"Property\":\"JobId\"}},\"Function\":5}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"categoryAxis\":[{\"properties\":{\"axisType\":{\"expr\":{\"Literal\":{\"Value\":\"'Categorical'\"}}}}}],\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":3,\"Percent\":0}}}}}}}]},\"vcObjects\":{\"visualHeader\":[{\"properties\":{\"showCopyVisualImageButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showFilterRestatementButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showFocusModeButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showPinButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'linkedin jobs by Titles'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 282.00,
+          "width": 394.00,
+          "x": 20.00,
+          "y": 414.00,
+          "z": 9000.00
+        },
+        {
+          "config": "{\"name\":\"fc777a33907b20471108\",\"layouts\":[{\"id\":0,\"position\":{\"x\":19.984387197501952,\"y\":94.92583918813428,\"z\":15000,\"width\":393.6924277907885,\"height\":282.77907884465264,\"tabOrder\":8000}}],\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"projections\":{\"Category\":[{\"queryRef\":\"linkedin_jobs.SeniorityLevel\",\"active\":true}],\"Y\":[{\"queryRef\":\"CountNonNull(linkedin_jobs.JobId)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"l1\",\"Entity\":\"linkedin_jobs\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l1\"}},\"Property\":\"SeniorityLevel\"},\"Name\":\"linkedin_jobs.SeniorityLevel\",\"NativeReferenceName\":\"SeniorityLevel1\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l1\"}},\"Property\":\"JobId\"}},\"Function\":5},\"Name\":\"CountNonNull(linkedin_jobs.JobId)\",\"NativeReferenceName\":\"Count of JobId\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l1\"}},\"Property\":\"JobId\"}},\"Function\":5}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"categoryAxis\":[{\"properties\":{\"axisType\":{\"expr\":{\"Literal\":{\"Value\":\"'Categorical'\"}}}}}],\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":3,\"Percent\":0}}}}}}}]},\"vcObjects\":{\"visualHeader\":[{\"properties\":{\"showCopyVisualImageButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showFilterRestatementButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showFocusModeButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showPinButton\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'linkedin jobs by Seniority Level'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 282.78,
+          "width": 393.69,
+          "x": 19.98,
+          "y": 94.93,
+          "z": 15000.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

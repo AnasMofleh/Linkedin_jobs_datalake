@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "_jobs_data_hourly"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "9434638f-24b9-42ea-8516-867f3c974378"
+  }
+}
