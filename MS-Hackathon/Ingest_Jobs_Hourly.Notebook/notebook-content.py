@@ -221,13 +221,24 @@ for idx, job_id in enumerate(job_ids):
             try:
                 more_jobs_details = job_soup.find("ul", {"class": "description__job-criteria-list"}).find_all("li", recursive=False)
                 job_post["SeniorityLevel"] = more_jobs_details[0].find("span", {"class": "description__job-criteria-text"}).text.strip()
-                job_post["EmploymentType"] = more_jobs_details[1].find("span", {"class": "description__job-criteria-text"}).text.strip()
-                job_post["JobFunction"] = more_jobs_details[2].find("span", {"class": "description__job-criteria-text"}).text.strip()
-                job_post["Industries"] = more_jobs_details[3].find("span", {"class": "description__job-criteria-text"}).text.strip()
             except:
                 job_post["SeniorityLevel"] = None
+
+            try:
+                job_post["EmploymentType"] = more_jobs_details[1].find("span", {"class": "description__job-criteria-text"}).text.strip()
+            except:
                 job_post["EmploymentType"] = None
+
+            try:
+                job_post["JobFunction"] = more_jobs_details[2].find("span", {"class": "description__job-criteria-text"}).text.strip()
+
+            except:
                 job_post["JobFunction"] = None
+
+            try:
+                job_post["Industries"] = more_jobs_details[3].find("span", {"class": "description__job-criteria-text"}).text.strip()
+            
+            except:
                 job_post["Industries"] = None
             
             # Add extraction timestamp

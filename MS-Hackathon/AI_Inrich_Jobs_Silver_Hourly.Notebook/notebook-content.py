@@ -173,23 +173,6 @@ for idx, job in tqdm(enumerate(prompt)):
 
 # CELL ********************
 
-result = {
-    'JobId':4062536805,
-    'Tools':['Python'],
-    'Requirements': ['Bachelor’s degree in Computer Science, Information Technology'],
-    'Offer': ['Remote work'],
-    'WorkType':'Remote'
-}
-
-# METADATA ********************
-
-# META {
-# META   "language": "python",
-# META   "language_group": "synapse_pyspark"
-# META }
-
-# CELL ********************
-
 import pandas as pd
 
 df = spark.createDataFrame(
@@ -209,6 +192,15 @@ df = spark.createDataFrame(
 # CELL ********************
 
 # MAGIC %%sql
+# MAGIC 
+# MAGIC With temp_v as (
+# MAGIC     SELECT distinct JobID
+# MAGIC     ,Tools 
+# MAGIC     , Requirements
+# MAGIC     , Offer
+# MAGIC     , CASE WHEN (WorkType is null or WorkType = 'Null' ) THEN 'In-Office' ELSE WorkType END AS WorkType
+# MAGIC     FROM temp
+# MAGIC )
 # MAGIC 
 # MAGIC MERGE INTO silver.inriched_job a
 # MAGIC USING temp b
