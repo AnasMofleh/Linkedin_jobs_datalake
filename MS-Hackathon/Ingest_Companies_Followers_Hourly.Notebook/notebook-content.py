@@ -102,6 +102,10 @@ df = [x[0] for x in df.collect()]
 # META   "language_group": "synapse_pyspark"
 # META }
 
+# MARKDOWN ********************
+
+# Handeling error
+
 # CELL ********************
 
 company_followers = []

@@ -30,8 +30,7 @@ CREATE TABLE IF NOT EXISTS silver.linkedin_jobs (
     , JobTitle STRING
     , CompanyName STRING          
     , CompanyLinkedinUrl STRING            
-    , City STRING      
-    , TimePosting STRING             
+    , City STRING                  
     , NbrOfApplicants INT             
     , JobDescription STRING              
     , SeniorityLevel STRING              
@@ -56,7 +55,6 @@ WITH linkedin_jobs_transformed_view AS (
     , NULLIF(CompanyName, 'N/A') AS CompanyName
     , NULLIF(CompanyLinkedinUrl, 'N/A') AS CompanyLinkedinUrl
     , SPLIT(Location, ',')[0] AS City
-    , TimePosting
     , TRY_CAST(SPLIT(NbrOfApplicants, ' ')[0] AS INT) AS NbrOfApplicants
     , SeniorityLevel
     , EmploymentType
