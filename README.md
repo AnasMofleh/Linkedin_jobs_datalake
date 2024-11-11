@@ -1,4 +1,4 @@
-# Linkedin jobs Analysis
+# Linkedin jobs Analysis for the Swedish job market 
 
 ## Overview
 
