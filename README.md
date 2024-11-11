@@ -1,4 +1,4 @@
-# Linkedin jobs Analysis in Sweden
+# Linkedin jobs Analysis
 
 ## Overview
 
