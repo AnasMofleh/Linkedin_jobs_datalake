@@ -316,13 +316,13 @@ df.write.format("delta").mode("append").option("mergeSchema", "true").save("File
 
 # CELL ********************
 
-# %%sql
-# DELETE FROM bronze.linkedin_jobs
-# WHERE DATEDIFF(day, ExtractionDatetime, CURRENT_TIMESTAMP) > 30;
+# MAGIC %%sql
+# MAGIC DELETE FROM bronze.linkedin_jobs
+# MAGIC WHERE DATEDIFF(day, ExtractionDatetime, CURRENT_TIMESTAMP) > 30;
 
 # METADATA ********************
 
 # META {
-# META   "language": "python",
+# META   "language": "sparksql",
 # META   "language_group": "synapse_pyspark"
 # META }

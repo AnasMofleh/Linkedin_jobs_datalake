@@ -80,8 +80,8 @@ WHEN NOT MATCHED THEN INSERT *
 
 -- CELL ********************
 
--- DELETE FROM silver.linkedin_jobs
--- WHERE DATEDIFF(day, ExtractionDatetime, CURRENT_TIMESTAMP) > 30;
+DELETE FROM silver.linkedin_jobs
+WHERE DATEDIFF(day, ExtractionDatetime, CURRENT_TIMESTAMP) > 30;
 
 -- METADATA ********************
 
