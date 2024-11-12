@@ -54,7 +54,7 @@ WITH linkedin_jobs_transformed_view AS (
     , JobTitle
     , NULLIF(CompanyName, 'N/A') AS CompanyName
     , NULLIF(CompanyLinkedinUrl, 'N/A') AS CompanyLinkedinUrl
-    , SPLIT(Location, ',')[0] AS City
+    , SPLIT(Location, ',')[0] AS City -- This is used to only get the city part of the location description
     , TRY_CAST(SPLIT(NbrOfApplicants, ' ')[0] AS INT) AS NbrOfApplicants
     , SeniorityLevel
     , EmploymentType
@@ -70,6 +70,18 @@ MERGE INTO silver.linkedin_jobs a USING linkedin_jobs_transformed_view
 ON linkedin_jobs_transformed_view.JobId = a.JobId
 WHEN MATCHED THEN UPDATE SET *
 WHEN NOT MATCHED THEN INSERT *
+
+-- METADATA ********************
+
+-- META {
+-- META   "language": "sparksql",
+-- META   "language_group": "synapse_pyspark"
+-- META }
+
+-- CELL ********************
+
+-- DELETE FROM silver.linkedin_jobs
+-- WHERE DATEDIFF(day, ExtractionDatetime, CURRENT_TIMESTAMP) > 30;
 
 -- METADATA ********************
 

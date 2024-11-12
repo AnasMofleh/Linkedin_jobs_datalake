@@ -104,18 +104,34 @@ df = [x[0] for x in df.collect()]
 
 # MARKDOWN ********************
 
-# Handeling error
+# ## Follower Count Extraction Methods
+# 
+# This code attempts to retrieve the follower count for each company using two methods:
+# 
+# 1. **Primary Method (Company Posts Section)**: 
+#    - This method first searches for the follower count in the company’s posts section on LinkedIn, where follower information is usually more consistently structured. By parsing elements with specific tags and class names, this method captures the majority of follower counts.
+#    
+# 2. **Fallback Method (Profile Top Section)**: 
+#    - If the company does not have any posts, it falls back to extracting the follower count from the top section of the company’s LinkedIn profile.
+#    - This method is less reliable for certain pages, as LinkedIn profiles vary in structure. However, it helps minimize the number of companies that are missed by the first method.
+#    
+# By using these two methods, we increase the chances of retrieving follower counts while accounting for LinkedIn page variations.
+
 
 # CELL ********************
 
-company_followers = []
-max_retries = 5
+company_followers = [] # Initialize an empty list to store follower data for each company URL
+max_retries = 5 # Define the maximum number of retry attempts in case of request failures
 retry = 0
 
+# Loop through each URL in the DataFrame
 for url in df:
-
+    
+    # Ensure the URL is not None before processing
     if url:
         retry = 0
+
+        # Attempt to retrieve data, retrying up to the max_retries limit
         while retry < max_retries:
             retry += 1
             delay = 1
@@ -127,20 +143,25 @@ for url in df:
                 # Parse the HTML content
                 list_soup = BeautifulSoup(response.text, 'html.parser')
                 
-                # Locate the followers count
+                # Locate the followers count in the compnay posts section
                 followers_element = list_soup.findAll('li', class_='mb-1')
 
                 if followers_element:
+
+                    # Collect each post made by the company on their linkedin profile
                     posts = [e for e in followers_element]
                     
+                    # Attempt to extract follower count from parsed elements
                     if posts:
                         for post in posts:
                             try:
+                                # Extract numbers from the text using regex and convert to integer
                                 Nbr_of_followers = int(''.join(re.findall(r'\b\d+\b', post.p.get_text(strip=True))))
                                 break
                             except:
                                 print(f"Could find followers count trying with another element ..")
                                         
+                        # Extraction successed and now the follower data will be appended to the list
                         company_followers.append({
                         "url" : url,
                         "Nbr_of_followers" : Nbr_of_followers,
@@ -150,10 +171,15 @@ for url in df:
 
                     else:
                         print(f"could not find followers count in the link{url}")
-                                
+
+                # If the company does not have any posts on their LinkedIn profile, 
+                # the follower count will be extracted from the company's profile top section.      
                 else:
                     try:
+                        # Locate the follower count in the meta description if no posts are available
                         followers_element = list_soup.find('meta', {'name': 'description'})
+
+                        # Extract follower count using regex and convert to integer
                         Nbr_of_followers = re.findall(r'\| (.*?) f', followers_element.get("content"))
                         Nbr_of_followers = int(''.join(re.findall(r'\d+', Nbr_of_followers[0])))
                         company_followers.append({

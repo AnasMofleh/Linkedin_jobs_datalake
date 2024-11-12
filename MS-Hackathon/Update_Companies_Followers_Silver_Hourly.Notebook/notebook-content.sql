@@ -15,6 +15,12 @@
 -- META   }
 -- META }
 
+-- MARKDOWN ********************
+
+-- ## Creating the Table for Follower Data
+-- 
+-- This code creates the `silver.company_followers` table if it does not already exist.
+
 -- CELL ********************
 
 CREATE TABLE IF NOT EXISTS silver.company_followers (
@@ -30,6 +36,12 @@ CREATE TABLE IF NOT EXISTS silver.company_followers (
 -- META   "language_group": "synapse_pyspark"
 -- META }
 
+-- MARKDOWN ********************
+
+-- ## Updating Follower Data in Silver Layer
+-- 
+-- This query checks if the follower data for each company URL from the bronze layer already exists in the silver layer. If a match is found (i.e., the company URL already exists in the silver layer), it updates the follower count with the new data. If no match is found, it inserts the new follower data as a new entry.
+
 -- CELL ********************
 
 -- MAGIC %%sql
@@ -43,7 +55,7 @@ CREATE TABLE IF NOT EXISTS silver.company_followers (
 -- MAGIC )
 -- MAGIC 
 -- MAGIC MERGE INTO silver.company_followers a USING updated_companies_followers
--- MAGIC ON updated_companies_followers.url = a.url
+-- MAGIC ON updated_companies_followers.url = a.url 
 -- MAGIC WHEN MATCHED THEN UPDATE SET *
 -- MAGIC WHEN NOT MATCHED THEN INSERT *
 

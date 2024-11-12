@@ -15,6 +15,12 @@
 # META   }
 # META }
 
+# MARKDOWN ********************
+
+# ## Creating the Table for Enriched Data
+# 
+# This code creates the `silver.inriched_job` table if it does not already exist.
+
 # CELL ********************
 
 # MAGIC %%sql
@@ -93,6 +99,21 @@ def gpt_chat(persona, prompt):
 # META   "language_group": "synapse_pyspark"
 # META }
 
+# MARKDOWN ********************
+
+# ## Checking for Existing Data in `silver.inriched_job`
+# 
+# This code checks if the `silver.inriched_job` table already exists in the Spark catalog. The logic handles two cases:
+# 
+# 1. **If `silver.inriched_job` exists**:
+#    - The pipeline retrieves only new job records by selecting records from `silver.linkedin_jobs` where the `JobId` is not already present in `silver.inriched_job`. This ensures only new jobs are processed, avoiding duplicates.
+# 
+# 2. **If `silver.inriched_job` does not exist** (e.g., the first pipeline run):
+#    - All records from `silver.linkedin_jobs` are selected for processing, as there is no existing data to exclude.
+# 
+# The resulting DataFrame `df` is used to collect `JobId` and `JobDescription` fields for further processing in the pipeline.
+
+
 # CELL ********************
 
 table_exists = spark.catalog.tableExists("silver.inriched_job")
@@ -145,12 +166,17 @@ for idx, job in tqdm(enumerate(prompt)):
     max_retries = 20
 
     while retry_count < max_retries:
+        # Call a function 'gpt_chat' to summarize the job description with a given persona
+        # 'gpt_chat' returns a JSON response, which is converted into a dictionary
         try:
             res_summerize = gpt_chat(persona, job.JobDescription)
             row.update(json.loads(res_summerize))
             print(f"Success {idx+1}/{len(prompt)}. Status code:200! Fetching job: {job.JobId} information.")
             break
+
+        # Handle any exceptions that occur during the function call
         except Exception as e:
+            # Capture the error message as a string for analysis
             error_message = str(e)
             if "429" in error_message:
                 wait_time_match = re.search(r"retry after (\d+) seconds", error_message)
@@ -170,6 +196,14 @@ for idx, job in tqdm(enumerate(prompt)):
 # META   "language": "python",
 # META   "language_group": "synapse_pyspark"
 # META }
+
+# MARKDOWN ********************
+
+# ### Data Transformation
+# 
+# **Explode Nested Columns**:
+#    - `.explode('Tools', ignore_index=True)`: Expands the `Tools` column by splitting elements if it contains lists, creating a new row for each list item.
+#    - Similarly, the `Requirements` and `Offer` columns are expanded. This helps normalize the data structure by flattening any list entries in each specified column.
 
 # CELL ********************
 
@@ -198,7 +232,7 @@ df = spark.createDataFrame(
 # MAGIC     ,Tools 
 # MAGIC     , Requirements
 # MAGIC     , Offer
-# MAGIC     , CASE WHEN (WorkType is null or WorkType = 'Null' ) THEN 'In-Office' ELSE WorkType END AS WorkType
+# MAGIC     , CASE WHEN (WorkType is null or WorkType = 'Null' ) THEN 'In-Office' ELSE WorkType END AS WorkType -- A Null WorkType is consided to be In-Office WorkType
 # MAGIC     FROM temp
 # MAGIC )
 # MAGIC 
@@ -211,5 +245,18 @@ df = spark.createDataFrame(
 
 # META {
 # META   "language": "sparksql",
+# META   "language_group": "synapse_pyspark"
+# META }
+
+# CELL ********************
+
+# %%sql
+# DELETE FROM silver.inriched_job
+# WHERE JobId not in (SELECT JobId FROM silver.linkedin_jobs) -- Delete old jobs
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
 # META   "language_group": "synapse_pyspark"
 # META }
