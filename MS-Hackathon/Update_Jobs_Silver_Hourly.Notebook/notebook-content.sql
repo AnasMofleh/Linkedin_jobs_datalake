@@ -51,6 +51,7 @@ CREATE TABLE IF NOT EXISTS silver.linkedin_jobs (
 
 WITH linkedin_jobs_transformed_view AS (
     SELECT distinct CAST(JobId AS BIGINT) AS JobId
+    , ROW_NUMBER() OVER (PARTITION BY JobId ORDER BY ExtractionDatetime) rn
     , JobTitle
     , NULLIF(CompanyName, 'N/A') AS CompanyName
     , NULLIF(CompanyLinkedinUrl, 'N/A') AS CompanyLinkedinUrl
@@ -64,10 +65,27 @@ WITH linkedin_jobs_transformed_view AS (
     , COALESCE(TRY_CAST(publishdatetime AS TIMESTAMP), ExtractionDatetime) AS ExtractionDatetime
     
     FROM bronze.linkedin_jobs
+),
+
+final as (
+    SELECT JobId
+        , JobTitle
+        , CompanyName
+        , CompanyLinkedinUrl
+        , City
+        , NbrOfApplicants
+        , SeniorityLevel
+        , EmploymentType
+        , JobFunction
+        , JobDescription
+        , Industries
+        , ExtractionDatetime
+    from linkedin_jobs_transformed_view
+    where rn = 1
 )
 
-MERGE INTO silver.linkedin_jobs a USING linkedin_jobs_transformed_view
-ON linkedin_jobs_transformed_view.JobId = a.JobId
+MERGE INTO silver.linkedin_jobs a USING final
+ON final.JobId = a.JobId
 WHEN MATCHED THEN UPDATE SET *
 WHEN NOT MATCHED THEN INSERT *
 
