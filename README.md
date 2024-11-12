@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is an in-depth analysis designed to derive insights from LinkedIn job posts within Sweden. It utilizes a robust architecture integrating various technologies and services to capture, store, process, and analyze jobs posted on LinkedIn on an hourly basis. Additionally, it incorporates population data at the city level to provide a comprehensive view of the swedish job market dynamics.
+This project is an in-depth analysis designed to derive insights from LinkedIn job posts within the swedish market. It utilizes a robust architecture integrating various technologies and services to capture, store, process, and analyze jobs posted on LinkedIn on an hourly basis. Additionally, it incorporates population data at the city level to provide a comprehensive view of the swedish job market dynamics.
 
 ## Architecture
 
