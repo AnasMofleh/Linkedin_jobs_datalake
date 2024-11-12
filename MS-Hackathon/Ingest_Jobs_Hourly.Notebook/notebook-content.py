@@ -74,7 +74,7 @@ while retry < max_retries:
     delay = 0.3 # Initial delay between requests
 
     # Construct the URL for extracting job postings (pagination with 'start' parameter)
-    list_url = f"https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords=Data%2BEngineer&location=Sweden&start={page_numb}&f_TPR=r{time_windwo_in_seconds}"
+    list_url = f"https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?location=Sweden&start={page_numb}&f_TPR=r{time_windwo_in_seconds}"
     response = requests.get(list_url)
     
     # Check for a successful response and if there are no jobs on the page

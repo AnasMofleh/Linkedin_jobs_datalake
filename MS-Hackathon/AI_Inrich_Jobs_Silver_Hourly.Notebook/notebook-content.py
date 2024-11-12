@@ -209,12 +209,24 @@ for idx, job in tqdm(enumerate(prompt)):
 
 import pandas as pd
 
-df = spark.createDataFrame(
-    pd.DataFrame(result)
-    .explode('Tools', ignore_index=True)
-    .explode('Requirements', ignore_index=True)
-    .explode('Offer', ignore_index=True)
-).createOrReplaceTempView("temp")
+
+if result:
+    try:
+        columns = ["JobID", "Tools", "Requirements", "Offer", "WorkType"]
+        df = spark.createDataFrame(
+            pd.DataFrame(result)
+            .explode('Tools', ignore_index=True)
+            .explode('Requirements', ignore_index=True)
+            .explode('Offer', ignore_index=True)
+        ).createOrReplaceTempView("temp")
+
+    except:
+        print('Results from the AI is not as expected !')
+
+
+else: 
+    schema = "JobID INT, Tools STRING, Requirements STRING, Offer STRING, WorkType STRING"
+    empty_df = spark.createDataFrame([], schema).createOrReplaceTempView("temp")
 
 # METADATA ********************
 
@@ -229,7 +241,7 @@ df = spark.createDataFrame(
 # MAGIC 
 # MAGIC With temp_v as (
 # MAGIC     SELECT distinct JobID
-# MAGIC     ,Tools 
+# MAGIC     , Tools 
 # MAGIC     , Requirements
 # MAGIC     , Offer
 # MAGIC     , CASE WHEN (WorkType is null or WorkType = 'Null' ) THEN 'In-Office' ELSE WorkType END AS WorkType -- A Null WorkType is consided to be In-Office WorkType
@@ -237,7 +249,7 @@ df = spark.createDataFrame(
 # MAGIC )
 # MAGIC 
 # MAGIC MERGE INTO silver.inriched_job a
-# MAGIC USING temp b
+# MAGIC USING temp_v b
 # MAGIC ON a.JobId = b.JobId
 # MAGIC WHEN NOT MATCHED THEN INSERT *;
 
