@@ -62,7 +62,6 @@ import re
 
 ENDPOINT = ""
 API_KEY = ""
-
 API_VERSION = "2024-02-01"
 MODEL_NAME = "gpt-4-turbo-2024-04-09"
 
