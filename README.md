@@ -35,15 +35,31 @@ The solution leverages a medallion architecture with two main lakehouses, `bronz
 
 <img src="assets/_population_data_monthly_pipeline.png">
 
+
+## PowerBi report
+The PowerBi report shows insights based on the hourly linkedin jobs ingested and with based on a swedish citis level. It consists of five different pages:
+1. *Linkedin jobs key measures*: Provides insights into job counts based on seniority level, popularity, titles, employment type, and company name. Additionally, it includes a heat map of job counts across cities in Sweden.
+2. *Sweden population insights*: Insights into the total population of Swedish cities, broken down by gender (men and women).
+3. *Linkedin Job descriptions key measures*: Insights derived from LinkedIn job descriptions, showcasing job counts based on job offers, key requirements, tools, and work type. It also highlights company popularity by the number of LinkedIn followers.
+4. *Seniority level requirements*: Analyzes the seniority level requirments.
+5. *Seniority level Tools*: Analyzes the seniority level required tools.
+
+<img src="https://app.powerbi.com/reportEmbed?reportId=ca7ea8ae-84db-4e59-bfaa-7f89e965fa5e&autoAuth=true&ctid=92f52389-3f0f-4623-9a3b-957c32d194e5">
+
 ## Co-pilot
 
+Microsoft Copilot played a pivotal role across various phases of the project. In the experimenting phase, Copilot assisted with notebooks, providing guidance on different Spark dialects, whether Spark SQL or PySpark. This support streamlined the data exploration and transformation processes. As the team transitioned to developing the Power BI report, Copilot helped create various measures, enhancing the report’s analytical depth. Finally, in the documentation phase, Copilot ensured comprehensive and clear documentation, capturing all critical aspects of the project.
 
 ## Installation
+To recreate the solution you should follow the steps below: 
 
+1. Fork the [Linkedin_jobs_datalake]([MS-Hackathon/Readme.md](https://github.com/AnasMofleh/Linkedin_jobs_datalake.git)) github repo.
+2. Create your own Fabric workspace.
+3. Follow Microsofts Learn documentation on how to [connect a workspace to a Git repo](https://learn.microsoft.com/en-us/fabric/cicd/git-integration/git-get-started?tabs=azure-devops%2CGitHub%2Ccommit-to-git#connect-to-a-git-repo) and use `MS-Hackathon` as the git root folder and `main` as the branch as follows: 
 
-## Usage
+<img src="assets/installation.png">
 
-To use the PowerBI report:
+4. Finally, connect and sync the artefacts into your new Fabric workspace and start using the report. 🎉
 
 ## Authors
 
