@@ -51,13 +51,15 @@ Microsoft Copilot played a pivotal role across various phases of the project. In
 ## Installation
 To recreate the solution you should follow the steps below: 
 
-1. Fork the [Linkedin_jobs_datalake]([MS-Hackathon/Readme.md](https://github.com/AnasMofleh/Linkedin_jobs_datalake.git)) github repo.
+1. Fork the [Linkedin_jobs_datalake](https://github.com/AnasMofleh/Linkedin_jobs_datalake.git) github repo.
 2. Create your own Fabric workspace.
 3. Follow Microsofts Learn documentation on how to [connect a workspace to a Git repo](https://learn.microsoft.com/en-us/fabric/cicd/git-integration/git-get-started?tabs=azure-devops%2CGitHub%2Ccommit-to-git#connect-to-a-git-repo) and use `MS-Hackathon` as the git root folder and `main` as the branch as follows: 
 
 <img src="assets/installation.png">
 
-4. Finally, connect and sync the artefacts into your new Fabric workspace and start using the report. 🎉
+4. Finally, connect and sync the artefacts into your new Fabric workspace.
+5. Add `ENDPOINT` and `API_KEY` to the [AI_Inrich_Jobs_Silver_Hourly](MS-Hackathon/AI_Inrich_Jobs_Silver_Hourly.Notebook/notebook-content.py) notebook.
+6. Done, you should now be able to use the report. 🎉
 
 ## Authors
 
