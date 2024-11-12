@@ -6,7 +6,7 @@ This project is an in-depth analysis designed to derive insights from LinkedIn j
 
 ## Architecture
 
-The architecture consists of two data flows. The first flow involves LinkedIn job data, which is ingested on an hourly basis into the bronze lakehouse. The second flow involves data from the Swedish Central Statistics Office (SCB), which is ingested into the bronze lakehouse on a monthly basis.
+The architecture consists of two data pipelines. The first flow involves LinkedIn job data, which is ingested on an hourly basis into the bronze lakehouse. The second flow involves data from the Swedish Central Statistics Office (SCB), which is ingested into the bronze lakehouse on a monthly basis.
 
 Both datasets are curated and transformed, then loaded into new tables in the silver lakehouse. Here, we use Azure OpenAI to enrich the job data by extracting important features from the job descriptions.
 
