@@ -44,8 +44,6 @@ The PowerBi report shows insights based on the hourly linkedin jobs ingested and
 4. *Seniority level requirements*: Analyzes the seniority level requirments.
 5. *Seniority level Tools*: Analyzes the seniority level required tools.
 
-<img src="https://app.powerbi.com/reportEmbed?reportId=ca7ea8ae-84db-4e59-bfaa-7f89e965fa5e&autoAuth=true&ctid=92f52389-3f0f-4623-9a3b-957c32d194e5">
-
 ## Co-pilot
 
 Microsoft Copilot played a pivotal role across various phases of the project. In the experimenting phase, Copilot assisted with notebooks, providing guidance on different Spark dialects, whether Spark SQL or PySpark. This support streamlined the data exploration and transformation processes. As the team transitioned to developing the Power BI report, Copilot helped create various measures, enhancing the report’s analytical depth. Finally, in the documentation phase, Copilot ensured comprehensive and clear documentation, capturing all critical aspects of the project.
