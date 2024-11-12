@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS silver.linkedin_jobs (
 -- CELL ********************
 
 WITH linkedin_jobs_transformed_view AS (
-    SELECT CAST(JobId AS BIGINT) AS JobId
+    SELECT distinct CAST(JobId AS BIGINT) AS JobId
     , JobTitle
     , NULLIF(CompanyName, 'N/A') AS CompanyName
     , NULLIF(CompanyLinkedinUrl, 'N/A') AS CompanyLinkedinUrl

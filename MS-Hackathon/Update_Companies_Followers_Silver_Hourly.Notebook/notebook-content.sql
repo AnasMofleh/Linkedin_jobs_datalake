@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS silver.company_followers (
 -- MAGIC %%sql
 -- MAGIC 
 -- MAGIC WITH updated_companies_followers AS (
--- MAGIC     SELECT url
+-- MAGIC     SELECT distinct url
 -- MAGIC     , Nbr_of_followers
 -- MAGIC     , extraction_time
 -- MAGIC     
