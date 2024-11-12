@@ -53,7 +53,7 @@
           "secureInput": false,
           "secureOutput": false
         },
-        "name": "AI_Inrich_Jobs_Silver_Hourly",
+        "name": "AI_Enrich_Jobs_Silver_Hourly",
         "dependsOn": [
           {
             "activity": "Update_Jobs_Silver_Hourly",
