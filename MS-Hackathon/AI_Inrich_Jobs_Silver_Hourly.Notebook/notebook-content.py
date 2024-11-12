@@ -19,13 +19,13 @@
 
 # ## Creating the Table for Enriched Data
 # 
-# This code creates the `silver.inriched_job` table if it does not already exist.
+# This code creates the `silver.enriched_job` table if it does not already exist.
 
 # CELL ********************
 
 # MAGIC %%sql
 # MAGIC 
-# MAGIC CREATE TABLE IF NOT EXISTS silver.inriched_job 
+# MAGIC CREATE TABLE IF NOT EXISTS silver.enriched_job 
 # MAGIC (
 # MAGIC     JobId BIGINT NOT NULL
 # MAGIC     , Tools STRING 
@@ -101,14 +101,14 @@ def gpt_chat(persona, prompt):
 
 # MARKDOWN ********************
 
-# ## Checking for Existing Data in `silver.inriched_job`
+# ## Checking for Existing Data in `silver.enriched_job`
 # 
-# This code checks if the `silver.inriched_job` table already exists in the Spark catalog. The logic handles two cases:
+# This code checks if the `silver.enriched_job` table already exists in the Spark catalog. The logic handles two cases:
 # 
-# 1. **If `silver.inriched_job` exists**:
-#    - The pipeline retrieves only new job records by selecting records from `silver.linkedin_jobs` where the `JobId` is not already present in `silver.inriched_job`. This ensures only new jobs are processed, avoiding duplicates.
+# 1. **If `silver.enriched_job` exists**:
+#    - The pipeline retrieves only new job records by selecting records from `silver.linkedin_jobs` where the `JobId` is not already present in `silver.enriched_job`. This ensures only new jobs are processed, avoiding duplicates.
 # 
-# 2. **If `silver.inriched_job` does not exist** (e.g., the first pipeline run):
+# 2. **If `silver.enriched_job` does not exist** (e.g., the first pipeline run):
 #    - All records from `silver.linkedin_jobs` are selected for processing, as there is no existing data to exclude.
 # 
 # The resulting DataFrame `df` is used to collect `JobId` and `JobDescription` fields for further processing in the pipeline.
@@ -116,12 +116,12 @@ def gpt_chat(persona, prompt):
 
 # CELL ********************
 
-table_exists = spark.catalog.tableExists("silver.inriched_job")
+table_exists = spark.catalog.tableExists("silver.enriched_job")
 
-if table_exists: # first time the pipeline will run the silver.inriched_job would not exist
+if table_exists: # first time the pipeline will run the silver.enriched_job would not exist
     df = spark.sql("""
         SELECT * FROM silver.linkedin_jobs
-        WHERE JobId NOT IN (SELECT JobId FROM silver.inriched_job)
+        WHERE JobId NOT IN (SELECT JobId FROM silver.enriched_job)
     """)
 else:
     df = spark.sql("SELECT * FROM silver.linkedin_jobs")
@@ -248,7 +248,7 @@ else:
 # MAGIC     FROM temp
 # MAGIC )
 # MAGIC 
-# MAGIC MERGE INTO silver.inriched_job a
+# MAGIC MERGE INTO silver.enriched_job a
 # MAGIC USING temp_v b
 # MAGIC ON a.JobId = b.JobId
 # MAGIC WHEN NOT MATCHED THEN INSERT *;
@@ -263,7 +263,7 @@ else:
 # CELL ********************
 
 # MAGIC %%sql
-# MAGIC DELETE FROM silver.inriched_job
+# MAGIC DELETE FROM silver.enriched_job
 # MAGIC WHERE JobId not in (SELECT JobId FROM silver.linkedin_jobs) -- Delete old jobs
 
 # METADATA ********************
