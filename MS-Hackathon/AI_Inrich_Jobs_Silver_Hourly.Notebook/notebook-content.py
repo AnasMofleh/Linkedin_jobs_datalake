@@ -262,13 +262,27 @@ else:
 
 # CELL ********************
 
-# MAGIC %%sql
-# MAGIC DELETE FROM silver.enriched_job
-# MAGIC WHERE JobId not in (SELECT JobId FROM silver.linkedin_jobs) -- Delete old jobs
+# Load the dataframes
+try: 
+    enriched_job_df = spark.table("silver.enriched_job")
+    jobs_to_delete_ids = spark.sql("""
+        select distinct JobId
+        FROM silver.enriched_job 
+        WHERE JobId not in (select distinct JobId from silver.linkedin_jobs)
+    """).rdd.flatMap(lambda x: x).collect()
+
+    # Filter out the rows to delete from the original dataframe
+    updated_enriched_job_df = enriched_job_df.filter(~enriched_job_df['JobId'].isin(jobs_to_delete_ids))
+
+    # Overwrite the table with the updated dataframe
+    updated_enriched_job_df.write.mode("overwrite").saveAsTable("silver.enriched_job")
+
+except:
+    print('nothing to delete')
 
 # METADATA ********************
 
 # META {
-# META   "language": "sparksql",
+# META   "language": "python",
 # META   "language_group": "synapse_pyspark"
 # META }
