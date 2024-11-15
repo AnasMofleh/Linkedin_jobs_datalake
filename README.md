@@ -61,6 +61,8 @@ To recreate the solution you should follow the steps below:
 5. Add `ENDPOINT` and `API_KEY` to the [AI_Inrich_Jobs_Silver_Hourly](MS-Hackathon/AI_Inrich_Jobs_Silver_Hourly.Notebook/notebook-content.py) notebook.
 6. Done, you should now be able to use the report. 🎉
 
+## Microsoft Fabric Hackathon 2024
+This project started as part of the Micrsoft Fabric Hackathon 2024. more Info can be found [here](https://devpost.com/software/ms-hackathon).
 ## Authors
 
 - [Mohammad Raja](https://www.linkedin.com/in/mohammad-raja-455a62229/) - Initial work and maintenance.
