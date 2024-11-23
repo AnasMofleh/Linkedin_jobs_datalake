@@ -60,10 +60,8 @@ import json
 import time
 import re
 
-
-# The key and endpoint are closed, so it is fine to show them :) 
-ENDPOINT = "https://mango-bush-0a9e12903.5.azurestaticapps.net/api/v1"
-API_KEY = "0f07fa20-4b6b-4029-a168-60027185eb46"
+ENDPOINT = ""
+API_KEY = ""
 
 API_VERSION = "2024-02-01"
 MODEL_NAME = "gpt-4-turbo-2024-04-09"
